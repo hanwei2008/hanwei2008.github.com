@@ -60,6 +60,12 @@ sudo invoke-rc.d krb5-kdc restart
 ```
 ## 测试
 
-### kadmin.local
+[输入][1]
+
+```
+sudo kadmin.local
+```
 
 ## 注意事项
+
+[1]: As the first test, we will run command kadmin.local on the server. The kadmin command ordinarily requires principal name and password before letting anyone access the administrative interface. However, kadmin.local is a variant of the command that must be run locally on the same machine as the KDC, and with administrator privileges. It is then able to open the Kerberos database file directly (taking advantage of Unix file permissions), without requiring extra privileges and without using the kadmind (Kerberos master server) daemon. 
