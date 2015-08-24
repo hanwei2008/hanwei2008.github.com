@@ -58,6 +58,8 @@ sudo chmod -R 750  /var/log/kerberos
 sudo invoke-rc.d krb5-admin-server restart
 sudo invoke-rc.d krb5-kdc restart
 ```
+## 测试
 
+### kadmin.local
 
 ## 注意事项
