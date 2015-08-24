@@ -39,5 +39,21 @@ sudo krb5_newrealm
 .lanjing.com=LANJING.COM
 lanjing.com=LANJING.COM
 ```
+在该文件的底部添加如下内容
+```
+[logging]
+	kdc = FILE:/var/log/kerberos/krb5kdc.log
+	admin_server = FILE:/var/log/kerberos/kadmin.log
+	default = FILE:/var/log/kerberos/krb5lib.log
+```
+
+建立log目录并设置权限
+```
+sudo mkdir /var/log/kerberos
+sudo touch /var/log/kerberos/{krb5kdc,kadmin,krb5lib}.log
+sudo chmod -R 750  /var/log/kerberos
+```
+
+
 
 ## 注意事项
