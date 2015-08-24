@@ -9,19 +9,19 @@ sudo apt-get install krb5-{admin-server,kdc}
 ```
 
 ```
-Default Kerberos version 5 realm? SPINLOCK.HR
+Default Kerberos version 5 realm? LANJING.COM
 # (Your domain name in uppercase - a standard for naming Kerberos realms)
 
 Add locations of default Kerberos servers to /etc/krb5.conf? Yes
 # (Adding entries to krb.conf instead of DNS, for simplicity)
 
-Kerberos servers for your realm: krb1.spinlock.hr
-# (Make sure your DNS resolves krb1.spinlock.hr to
+Kerberos servers for your realm: vm3.lanjing.com
+# (Make sure your DNS resolves vm3.lanjing.com to
 # the NETWORK IP of the server, NOT 127.0.0.1!). Hint is given in
 # the section called “Conventions”.
 
-Administrative server for your Kerberos realm: krb1.spinlock.hr
-# (Make sure your DNS resolves krb1.spinlock.hr to
+Administrative server for your Kerberos realm: vm3.lanjing.com
+# (Make sure your DNS resolves vm3.lanjing.com to
 # the NETWORK IP of the server, NOT 127.0.0.1!). Same hint as above.
 
 Create the Kerberos KDC configuration automatically? Yes
@@ -33,6 +33,11 @@ As soon as the installation is done, the Kerberos admin server (kadmind) and the
 ```
 sudo krb5_newrealm
 ```
+编辑  /etc/krb5.conf，在[domain_realm]下增加realm定义:
 
+```
+.lanjing.com=LANJING.COM
+lanjing.com=LANJING.COM
+```
 
 ## 注意事项
