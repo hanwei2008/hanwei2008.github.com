@@ -66,6 +66,31 @@ sudo invoke-rc.d krb5-kdc restart
 sudo kadmin.local
 ```
 
-## 注意事项
+## 配置
+
+### Access rights
+修改 /etc/krb5kdc/kadm5.acl文件
+```
+sudo vim  /etc/krb5kdc/kadm5.acl
+```
+取消注释:
+```
+# */admin *
+```
+
+使配置生效
+```
+sudo invoke-rc.d krb5-admin-server restart
+```
+
+### Kerberos policies
+运行
+```
+sudo kadmin.local
+```
+
+## Creating first privileged principal
+
+
 
 参考1: As the first test, we will run command kadmin.local on the server. The kadmin command ordinarily requires principal name and password before letting anyone access the administrative interface. However, kadmin.local is a variant of the command that must be run locally on the same machine as the KDC, and with administrator privileges. It is then able to open the Kerberos database file directly (taking advantage of Unix file permissions), without requiring extra privileges and without using the kadmind (Kerberos master server) daemon. 
