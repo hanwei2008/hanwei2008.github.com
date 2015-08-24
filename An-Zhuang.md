@@ -1,5 +1,7 @@
 # 安装
 
+参考:[Debian GNU and Ubuntu: Setting up MIT Kerberos 5](http://techpubs.spinlocksolutions.com/dklar/kerberos.html)
+
 ## 步骤
 
 ```
@@ -26,5 +28,11 @@ Create the Kerberos KDC configuration automatically? Yes
 
 Run the Kerberos V5 administration daemon (kadmind)? Yes
 ```
+As soon as the installation is done, the Kerberos admin server (kadmind) and the KDC will start. Kadmind will fail as, initially, there are no Kerberos realms created, which is fine.
+
+```
+sudo krb5_newrealm
+```
+
 
 ## 注意事项
