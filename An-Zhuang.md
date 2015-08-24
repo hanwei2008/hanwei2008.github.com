@@ -53,7 +53,11 @@ sudo mkdir /var/log/kerberos
 sudo touch /var/log/kerberos/{krb5kdc,kadmin,krb5lib}.log
 sudo chmod -R 750  /var/log/kerberos
 ```
-
+使配置生效
+```
+sudo invoke-rc.d krb5-admin-server restart
+sudo invoke-rc.d krb5-kdc restart
+```
 
 
 ## 注意事项
